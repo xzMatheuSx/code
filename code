@@ -1,0 +1,372 @@
+I'm creating a BOT in telegram that sends automatic messages, and I needed it to add a certain repeated word, example:
+
+if it appears "green, green, green" it will add the three and give a result = 3, and so on, does anyone know how to do this?
+
+My code
+###################
+
+
+
+from cgitb import text
+from csv import unregister_dialect
+import time
+from importlib import reload
+from pickle import NONE
+from sqlite3 import Time
+from bs4 import BeautifulSoup
+import telebot
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
+
+# Por informações do seu bot.########
+api_key = ''  # TOKEN DO SEU BOT
+chat_id = ''  # ID DO CANAL 
+#####################################
+bot = telebot.TeleBot(token=api_key)
+
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+nav = webdriver.Chrome(service=Service(
+    ChromeDriverManager().install()), chrome_options=options)
+
+analisar = 0
+gale_atual = 0
+analisar_open = 0
+resultsDouble = []
+resultadoGeral =[]
+
+
+while True:
+    def qualnum(x):
+        if x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+        elif x == '':
+            return 
+
+    def qualcor(x):
+        if x == '':
+            return ''
+
+        elif x == '':
+            return '
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+        elif x == ''
+            return '
+
+        elif x == '':
+            return ''
+
+        elif x == '':
+            return ''
+
+    try:
+        resulROOL = nav.find_element(
+        By.XPATH, '//*[@id="roulette-timer"]/div[1]').text
+    except NameError as erro:
+        print(erro)
+        print('ERRO 403')
+    except Exception as erro:
+        print('ERRO 404')
+
+    
+    analisar_open = 0
+    if resulROOL == 'Girando...':
+        analisar_open = 1
+        print('Analisando')
+        time.sleep(13)
+        c = nav.page_source
+        resultsDouble.clear()
+
+        soup = BeautifulSoup(c, 'html.parser')
+        go = soup.find('div', class_="entries main")
+        for i in go:
+            if i.getText():
+                resultsDouble.append(i.getText())
+            else:
+                resultsDouble.append('0')
+
+        resultsDouble = resultsDouble[:-1]
+
+        if analisar_open == 1:
+
+            default = resultsDouble[0:3]
+
+            mapeando = map(qualnum, default)
+            mapeando2 = map(qualcor, default)
+            finalnum = list(mapeando)
+            finalcor = list(mapeando2)
+            
+            
+
+            def CHECK_VERSION(num):
+                global analisar
+                global gale_atual
+
+
+                if analisar == 0:
+                    if num == ['','', '']:
+                        analisar = 1
+                        bot.send_message(chat_id=chat_id, text='''
+🎰 BLAZE.COM VIP 🎰
+
+📍ENTRADA CONFIRMADA TESTEEEEEEEEEEEEEEEEE📍
+⚫️ ENTRAR  NO VERMELHO TESTEEEEEEEEEEEEEEEEEEEE ⚫️
+  recomendado proteger com a aaaaaaaaaaaaaaaaaaa⚪️
+🔰 MÁXIMO G2 (OPCIONAL)🔰  (BLAZE.COM)
+                        ''')
+                        return
+                    if num == ['P', 'P', 'V']:
+                        analisar = 1
+                        bot.send_message(message_=chat_id, text='''
+🎰 BLAZE.COM VIP 🎰
+
+📍ENTRADA CONFIRMADA📍
+🔴 ENTRAR  NO VERMELHO  🔴
+  recomendado proteger com ⚪️
+🔰 MÁXIMO G2 (OPCIONAL) 🔰 (BLAZE.COM)
+                        ''')
+                        return
+
+                elif analisar == 1:
+
+                    if gale_atual == 0:
+                        
+                        if num == ['', '', '']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑🤑✅ 𝐆𝐑𝐄𝐍𝐍𝐍𝐍 ✅🤑🤑
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['', '', '']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑🤑✅ 𝐆𝐑𝐄𝐍𝐍𝐍𝐍 ✅🤑🤑
+                        ''')
+                            bot.send_message(
+chat_id-chat_id, text=())
+                            return
+                        if num == ['', '', '']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑⚪️GREEN BRANCO 14x⚪️🤑
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['', '', '']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑⚪️GREEN BRANCO 14x⚪️🤑
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+
+                        if num == [']:
+                            gale_atual = gale_atual+1
+                            bot.send_message(chat_id=chat_id, text='''
+Vamos para o GALE 1🤡
+                        ''')
+                            return
+                        if num == ['']:
+                            gale_atual = gale_atual+1
+                            bot.send_message(chat_id=chat_id, text='''
+Vamos para o GALE 1🤡
+                        ''')
+                            return
+
+                    if gale_atual == 1:
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+✅✅ 𝐆𝐑𝐄𝐍𝐍𝐍 𝐍𝐎 𝐆𝐀𝐋𝐄 1 ✅✅
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['P']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+✅✅ 𝐆𝐑𝐄𝐍𝐍𝐍 𝐍𝐎 𝐆𝐀𝐋𝐄 1 ✅✅
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑⚪️GREEN BRANCO 14x⚪️🤑
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑⚪️GREEN BRANCO 14x⚪️🤑
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+
+                        if num == ['']:
+                            gale_atual = gale_atual+1
+                            bot.send_message(chat_id=chat_id, text='''
+Vamos para o GALE 2🤡
+                        ''')
+                            return
+                        if num == ['']:
+                            gale_atual = gale_atual+1
+                            bot.send_message(chat_id=chat_id, text='''
+Vamos para o GALE 2🤡
+                        ''')
+                            return
+
+                    if gale_atual == 2:
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+✅✅✅ 𝐆𝐑𝐄𝐍𝐍𝐍 𝐍𝐎 𝐆𝐀𝐋𝐄 2 ✅✅✅
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+✅✅✅ 𝐆𝐑𝐄𝐍𝐍𝐍 𝐍𝐎 𝐆𝐀𝐋𝐄 2 ✅✅✅
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑⚪️GREEN BRANCO 14x⚪️🤑
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['']:
+                            analisar = 0
+                            gale_atual = 0
+                            bot.send_message(chat_id=chat_id, text='''
+🤑⚪️GREEN BRANCO 14x⚪️🤑
+                        ''')
+                            bot.
+send_message(
+                                chat_id-chat_id, text=())
+                            return
+
+                        if num == ['']:
+                            analyze = 0
+                            current_gale = 0
+                            bot.send_message(chat_id=chat_id, text='''
+😔 IT WAS NOT THIS TIME 😔
+ WAIT FOR A SEQUENCE OF GREEN
+                        ''')
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
+                        if num == ['']:
+                            analyze = 0
+                            current_gale = 0
+                            bot.send_message(chat_id=chat_id, text='''
+😔 IT WAS NOT THIS TIME 😔
+ WAIT FOR A SEQUENCE OF GREEN
+                        ''')
+                        bot.send_message(
+                         chat_id-chat_id, text=())
+                       return
+
+                        print(len(resultsDouble))
+            checkVersion = CHECK_VERSION(finalcor)
+            print(checkVersion)
