@@ -1,12 +1,3 @@
-I'm creating a BOT in telegram that sends automatic messages, and I needed it to add a certain repeated word, example:
-
-if it appears "green, green, green" it will add the three and give a result = 3, and so on, does anyone know how to do this?
-
-My code
-###################
-
-
-
 from cgitb import text
 from csv import unregister_dialect
 import time
@@ -205,7 +196,7 @@ while True:
                 elif analisar == 1:
 
                     if gale_atual == 0:
-                        
+                        # WIN    #['','', '']: manda sinal
                         if num == ['', '', '']:
                             analisar = 0
                             gale_atual = 0
@@ -222,7 +213,7 @@ while True:
 🤑🤑✅ 𝐆𝐑𝐄𝐍𝐍𝐍𝐍 ✅🤑🤑
                         ''')
                             bot.send_message(
-chat_id-chat_id, text=())
+                                chat_id-chat_id, text=())
                             return
                         if num == ['', '', '']:
                             analisar = 0
@@ -341,32 +332,32 @@ Vamos para o GALE 2🤡
                             bot.send_message(chat_id=chat_id, text='''
 🤑⚪️GREEN BRANCO 14x⚪️🤑
                         ''')
-                            bot.
-send_message(
+                            bot.send_message(
                                 chat_id-chat_id, text=())
                             return
 
                         if num == ['']:
-                            analyze = 0
-                            current_gale = 0
+                            analisar = 0
+                            gale_atual = 0
                             bot.send_message(chat_id=chat_id, text='''
-😔 IT WAS NOT THIS TIME 😔
- WAIT FOR A SEQUENCE OF GREEN
+😔 NÃO FOI DESSA VEZ 😔 
+ AGUARDE UMA SEQUÊNCIA DE GREEN
                         ''')
                             bot.send_message(
                                 chat_id-chat_id, text=())
                             return
                         if num == ['']:
-                            analyze = 0
-                            current_gale = 0
+                            analisar = 0
+                            gale_atual = 0
                             bot.send_message(chat_id=chat_id, text='''
-😔 IT WAS NOT THIS TIME 😔
- WAIT FOR A SEQUENCE OF GREEN
+😔 NÃO FOI DESSA VEZ 😔 
+ AGUARDE UMA SEQUÊNCIA DE GREEN
                         ''')
-                        bot.send_message(
-                         chat_id-chat_id, text=())
-                       return
+                            bot.send_message(
+                                chat_id-chat_id, text=())
+                            return
 
                         print(len(resultsDouble))
             checkVersion = CHECK_VERSION(finalcor)
             print(checkVersion)
+           
